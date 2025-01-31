@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimy Facts About the Human Body</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif; /* Font style */
+            background-color: #f4f4f4; /* Background color */
+            color: #333; /* Text color */
+            display: flex; /* Flexbox layout */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Styling for the container */
+        .container {
+            text-align: center; /* Center text */
+            background: white; /* White background */
+            padding: 20px; /* Padding around content */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        /* Styling for the button */
+        button {
+            padding: 10px 20px; /* Padding inside button */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #007BFF; /* Button background color */
+            color: white; /* Button text color */
+            cursor: pointer; /* Pointer cursor on hover */
+            font-size: 16px; /* Font size */
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #0056b3; /* Darker background on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grimy Facts About the Human Body</h1> <!-- Main title -->
+        <p id="fact"></p> <!-- Placeholder for displaying random fact -->
+        <button id="newFactBtn">Show Random Fact</button> <!-- Button to show a new fact -->
+    </div>
+    <script>
+        // Array of grimy facts about the human body
+        const facts = [
+            "The human body sheds about 30,000 to 40,000 dead skin cells every minute, which adds up to roughly 9 pounds of skin each year.",
+            "The human body is home to trillions of bacteria, with estimates suggesting that the number of bacterial cells in the body may outnumber human cells by a ratio of 10 to 1.",
+            "Your mouth contains more bacteria than there are people on Earth. The average mouth hosts around 700 different species of bacteria.",
+            "Sweat itself is mostly water, but it also contains urea, ammonia, and salts. The smell of sweat is largely due to bacteria breaking down these substances.",
+            "The average person produces about 1 ounce of gas per day, which can contain traces of fecal matter. This is why flatulence can sometimes have a strong odor.",
+            "The human ear produces earwax (cerumen) to protect the ear canal from dirt, dust, and bacteria. It can also trap dead skin cells and other debris.",
+            "The human nose produces about 1 to 2 liters of mucus each day, which helps trap dust, allergens, and pathogens.",
+            "The average human scalp has about 100,000 hair follicles, and each follicle can produce about 20 individual hairs in a lifetime.",
+            "The human gut contains about 100 trillion microorganisms, which play a crucial role in digestion and overall health. Some of these microbes can be harmful if they overgrow.",
+            "The unique scent of a person's body odor is influenced by genetics, diet, and hygiene. Certain foods, like garlic and onions, can significantly alter body odor."
+        ];
+
+        // Function to get a random fact and display it
+        function getRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length); // Generate a random index
+            document.getElementById('fact').innerText = facts[randomIndex]; // Display the random fact
+        }
+
+        // Event listener for button click to show a new fact
+        document.getElementById('newFactBtn').addEventListener('click', getRandomFact);
+
+        // Display a random fact on initial load
+        getRandomFact();
+    </script>
+</body>
+</html>
